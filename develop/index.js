@@ -1,6 +1,7 @@
 //Pull in file system and utilize inquirer package
 const fs = require('fs');
 const inquirer = require('inquirer');
+const { inherits } = require('node:util');
 //Pull in library 
 const Employee = require('./lib/Employee');
 const Engineer = require('./lib/Engineer');
@@ -28,4 +29,23 @@ const questions = [
 		name: 'managerOfficeNum',
 		message: 'What is the managers office number?'
 	}
-]
+];
+
+function writeToFile(fileName, f) {
+	fs.writeFile( fileName,	f, (error) => {
+			error 
+			? console.log(err) 
+			: console.log('Check out your HTML file!')
+		})
+};
+
+function init() {
+	inquirer
+	.prompt(questions)
+	.then(res => {
+		writeToFile('./dummyOutput/myTeam.html', generateHTML(res));
+	});
+};
+
+//Initialize the App
+init();
