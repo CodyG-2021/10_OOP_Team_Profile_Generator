@@ -78,7 +78,7 @@ const addEmpQuest = [
 	}
 ]
 
-const addEmpQuest = [
+const addEmpType = [
 	{
 		type: 'list',
 		name: 'typeEmp',
@@ -157,8 +157,17 @@ function addEmployees () {
 
 function createEmp() {
 	inquirer
-	.prompt()
-	.then()
+	.prompt(addEmpType)
+	.then(res => {
+		if (res === 'Engineer') {
+			const engineer = new Engineer (res.engName, res.engId, res.engEmail, res.engGithub);
+			team.push(engineer);
+			addEmployees();
+		}
+			const intern = new Intern (res.intName, res.intId, res.intEmail, res.intSchool);
+			team.push(intern);
+			addEmployees();
+	})
 }
 
 // function writeToFile(fileName, f) {
