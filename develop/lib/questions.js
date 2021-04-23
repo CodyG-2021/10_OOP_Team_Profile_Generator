@@ -1,5 +1,5 @@
 //Initial manager questions
-export const managerQuest = [
+const managerQuest = [
 	{
 		type: 'input',
 		name: 'managerName',
@@ -54,7 +54,7 @@ export const managerQuest = [
 	}
 ];
 
-export const addEmpQuest = [
+const addEmpQuest = [
 	{
 		type: 'list',
 		name: 'empAdd',
@@ -63,7 +63,7 @@ export const addEmpQuest = [
 	}
 ]
 
-export const addEmpType = [
+const addEmpType = [
 	{
 		type: 'list',
 		name: 'typeEmp',
@@ -72,7 +72,7 @@ export const addEmpType = [
 	}
 ]
 
-export const engineerQuest = [
+const engineerQuest = [
 	{
 		type: 'input',
 		name: 'engName',
@@ -94,7 +94,7 @@ export const engineerQuest = [
 		message: 'What is the Engineer\'s GitHub account?'
 	}
 ]
-export const internQuest = [
+const internQuest = [
 	{
 		type: 'input',
 		name: 'intName',
@@ -117,3 +117,4 @@ export const internQuest = [
 	}
 ]
 
+module.exports = {managerQuest, addEmpQuest, addEmpType, engineerQuest, internQuest};
