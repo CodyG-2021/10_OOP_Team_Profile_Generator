@@ -144,7 +144,7 @@ const internQuest = [
 function writeToFile(fileName, f) {
 	fs.writeFile( fileName,	f, (error) => {
 			error 
-			? console.log(err) 
+			? console.log(error) 
 			: console.log('Check out your HTML file!')
 		})
 }; 
@@ -185,8 +185,8 @@ function addEmployees() {
 			console.log(res);
 			res.empAdd === 'Yes'
 			? createEmp()
-			: genFile(team)
-			// :	writeToFile('./dummyOutput/myTeam.html', genFile(team))	
+			// : genFile(team)
+			:	writeToFile('./dist/dummyOutput/myTeam.html', genFile(team))	
 		// 	: console.log(team);
 		});
 };
