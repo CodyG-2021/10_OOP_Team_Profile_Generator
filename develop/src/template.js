@@ -1,82 +1,95 @@
-function genEmployees(data){
+function genEmployees(team){
 
-	let htmlMain = '';
-	data.forEach((obj) => {
-		console.log(obj);
+	// let htmlMain = '';
+	team.forEach(obj => {
 		switch (obj.getRole()) {
 			case 'Engineer':
-				let stringData = genEngineer(obj);
-				stringData += htmlMain;
-			break;
-			case 'Intern':
-				let stringData = genIntern(obj);
-				stringData += htmlMain;
+				// console.log('eng pass');
+				genEngineer(obj);
+				// let stringDataEng = genEngineer(obj);
+				// stringDataEng += htmlMain;
+				break;
+				case 'Intern':
+					genIntern(obj);
+				// let stringDataInt = genIntern(obj);
+				// stringDataInt += htmlMain;
 			break;
 			default:
-				return '';
+				console.log('default');
+				// return '';
 				break;
 		}
 	})
+	// return htmlMain
 };
 
-function genManager(obj) {
-return`			
-<div class="col-2">
-<div class="card" >
-<div class="card-body">
-<h5 class="card-title">${obj.getName()}</h5>
-<p class="card-text">${obj.getRole()}
-</p>
-</div>
-<ul class="list-group list-group-flush">
-<li class="list-group-item">ID: <span>${obj.getId()}</span></li>
-<li class="list-group-item">Email: <span>${obj.getEmail()}</span></li>
-<li class="list-group-item">GitHub: <a href="https://github.com/${obj.getOfficeNumber}">GitHub Profile</a></li>
-</ul>
-</div>
-</div>
-`
-};
+// function genManager(team) {
+// 	team.forEach( obj => {
+// 		if (obj.getRole() === 'Manager') {
+// 			return`			
+// <div class="col-2">
+// <div class="card" >
+// <div class="card-body">
+// <h5 class="card-title">${obj.getName()}</h5>
+// <p class="card-text">${obj.getRole()}
+// </p>
+// </div>
+// <ul class="list-group list-group-flush">
+// <li class="list-group-item">ID: <span>${obj.getId()}</span></li>
+// <li class="list-group-item">Email: <span>${obj.getEmail()}</span></li>
+// <li class="list-group-item">GitHub: <a href="https://github.com/${obj.getOfficeNumber}">GitHub Profile</a></li>
+// </ul>
+// </div>
+// </div>
+// ` 
+// 		} else {
+// 			return '';
+// 		}
+// 	});
+// };
 
 function genEngineer(obj) {
-return`			
-<div class="col-2">
-<div class="card" >
-<div class="card-body">
-<h5 class="card-title">${obj.getName()}</h5>
-<p class="card-text">${obj.getRole()}
-</p>
-</div>
-<ul class="list-group list-group-flush">
-<li class="list-group-item">ID: <span>${obj.getId()}</span></li>
-<li class="list-group-item">Email: <span>${obj.getEmail()}</span></li>
-<li class="list-group-item">GitHub: <a href="https://github.com/${obj.getGithub}">GitHub Profile</a></li>
-</ul>
-</div>
-</div>
-`
+	console.log(`made it to the gen eng ${obj.getName()}`);
+
+// return`			
+// <div class="col-2">
+// <div class="card" >
+// <div class="card-body">
+// <h5 class="card-title">${obj.getName()}</h5>
+// <p class="card-text">${obj.getRole()}
+// </p>
+// </div>
+// <ul class="list-group list-group-flush">
+// <li class="list-group-item">ID: <span>${obj.getId()}</span></li>
+// <li class="list-group-item">Email: <span>${obj.getEmail()}</span></li>
+// <li class="list-group-item">GitHub: <a href="https://github.com/${obj.getGithub}">GitHub Profile</a></li>
+// </ul>
+// </div>
+// </div>
+// `
 };
 
 function genIntern(obj) {
-return`			
-<div class="col-2">
-<div class="card" >
-<div class="card-body">
-<h5 class="card-title">${obj.getName()}</h5>
-<p class="card-text">${obj.getRole()}
-</p>
-</div>
-<ul class="list-group list-group-flush">
-<li class="list-group-item">ID: <span>${obj.getId()}</span></li>
-<li class="list-group-item">Email: <span>${obj.getEmail()}</span></li>
-<li class="list-group-item">GitHub: <a href="https://github.com/${obj.getGithub}">GitHub Profile</a></li>
-</ul>
-</div>
-</div>
-`
-}
+	console.log(`made it to the gen int ${obj.getName()}`);
+// return`			
+// <div class="col-2">
+// <div class="card" >
+// <div class="card-body">
+// <h5 class="card-title">${obj.getName()}</h5>
+// <p class="card-text">${obj.getRole()}
+// </p>
+// </div>
+// <ul class="list-group list-group-flush">
+// <li class="list-group-item">ID: <span>${obj.getId()}</span></li>
+// <li class="list-group-item">Email: <span>${obj.getEmail()}</span></li>
+// <li class="list-group-item">GitHub: <a href="https://github.com/${obj.getGithub}">GitHub Profile</a></li>
+// </ul>
+// </div>
+// </div>
+// `
+};
 
-function genFile(data) {
+function genFile(team) {
 	return `
 	<!DOCTYPE html>
 	<html lang="en">
@@ -103,12 +116,12 @@ function genFile(data) {
 			</header>
 			<div class="row justify-content-center">
 //----------------
-			${genManager(data)}
+			
 			</div>
 	
 			<div class="row justify-content-center">
 //----------------
-			${genEmployees(data)}
+${genEmployees(team)}
 			</div>
 
 		</body>
@@ -116,18 +129,24 @@ function genFile(data) {
 	`
 };
 
+//${genManager(team)}
+//${genEmployees(team)}
 
 
+//---------same thing
 
-// const generateTeam = team => {
-// 	const generateManager = manager => {
-// 		return `<div>HTML ${manager.getName()}<div>`
-// 	}
-	
+// function genFile (team) {
+// 	team.forEach(obj => {
+// 		console.log(obj.getRole());
+// 	});
 // }
 
-// module.exports = team => {
-// 	return ``
+// const genFile = (team) => {
+// 	team.forEach(obj => {
+// 		console.log(obj.getRole());
+// 	});
 // }
+
+//----------
 
 module.exports = genFile;

@@ -4,18 +4,17 @@ const inquirer = require('inquirer');
 // const { createEmptyTestResult } = require('@jest/test-result');
 // const { inherits } = require('node:util');
 // const { choices } = require('yargs');
+// import { create } from 'istanbul-reports';
 //Pulls in library 
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
-// import { create } from 'istanbul-reports';
+const genFile = require('./src/template');
+
 //Pulls in questions as to not clutter index file
-// const managerQuest = require('./lib/questions');
-// const addEmpQuest = require('./lib/questions'); 
-// const addEmpType = require('./lib/questions'); 
-// const engineerQuest = require('./lib/questions'); 
-// const internQuest = require('./lib/questions');
-// import {managerQuest, addEmpQuest, addEmpType, engineerQuest, internQuest} from './lib/questions';
+// const quest = require('./lib/questions');
+// console.log(managerQuest);
+
 
 //test
 const a = require('./lib/questions.js');
@@ -186,8 +185,9 @@ function addEmployees() {
 			console.log(res);
 			res.empAdd === 'Yes'
 			? createEmp()
-			:	writeToFile('./dummyOutput/myTeam.html', genFile(team))	
-			// console.log(team);
+			: genFile(team)
+			// :	writeToFile('./dummyOutput/myTeam.html', genFile(team))	
+		// 	: console.log(team);
 		});
 };
 
@@ -196,7 +196,7 @@ function init() {
 		.prompt(managerQuest)
 		.then(res => {
 			team.push(new Manager(res.managerName, res.managerId, res.managerEmail, res.managerOfficeNum));
-			console.log(a);
+			// console.log(a);
 			addEmployees();
 		});
 };
