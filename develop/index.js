@@ -17,6 +17,9 @@ const Manager = require('./lib/Manager');
 // const internQuest = require('./lib/questions');
 // import {managerQuest, addEmpQuest, addEmpType, engineerQuest, internQuest} from './lib/questions';
 
+//test
+const a = require('./lib/questions.js');
+
 //Holder array for added members
 const team = [];
 
@@ -28,12 +31,9 @@ const managerQuest = [
 		message: 'What is the managers name?',
 		validate: input => {
 			if (input) {
-				answer = true;
+				return true;
 			} else {
 				return "Please enter the managers to continue.";
-			}
-			if (answer) {
-
 			}
 		}
 	},
@@ -186,8 +186,8 @@ function addEmployees() {
 			console.log(res);
 			res.empAdd === 'Yes'
 			? createEmp()
-			:	console.log(team) ;
-			// writeToFile('./dummyOutput/myTeam.html', genFile(team))	
+			:	writeToFile('./dummyOutput/myTeam.html', genFile(team))	
+			// console.log(team);
 		});
 };
 
@@ -196,6 +196,7 @@ function init() {
 		.prompt(managerQuest)
 		.then(res => {
 			team.push(new Manager(res.managerName, res.managerId, res.managerEmail, res.managerOfficeNum));
+			console.log(a);
 			addEmployees();
 		});
 };
