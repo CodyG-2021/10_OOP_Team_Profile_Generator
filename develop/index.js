@@ -17,7 +17,7 @@ const genFile = require('./src/template');
 
 
 //test
-const a = require('./lib/questions.js');
+// const a = require('./10_OOP_Team_Profile_Generator/develop/lib/questions.js');
 
 //Holder array for added members
 const team = [];

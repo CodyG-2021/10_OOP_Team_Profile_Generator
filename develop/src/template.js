@@ -31,8 +31,8 @@ function genManager(team) {
 			</div>
 			<ul class="list-group list-group-flush">
 			<li class="list-group-item">ID: <span>${obj.getId()}</span></li>
-			<li class="list-group-item">Email: <span>${obj.getEmail()}</span></li>
-			<li class="list-group-item">GitHub: <a href="https://github.com/${obj.getOfficeNumber}">GitHub Profile</a></li>
+			<li class="list-group-item">Email: <a href="${obj.getEmail()}">${obj.getEmail()}</a></li>
+			<li class="list-group-item">Office Number: ${obj.getOfficeNumber()} </li>
 			</ul>
 			</div>
 			</div>
@@ -57,7 +57,7 @@ function genEngineer(obj) {
 	<ul class="list-group list-group-flush">
 	<li class="list-group-item">ID: <span>${obj.getId()}</span></li>
 	<li class="list-group-item">Email: <span>${obj.getEmail()}</span></li>
-	<li class="list-group-item">GitHub: <a href="https://github.com/${obj.getGithub}">GitHub Profile</a></li>
+	<li class="list-group-item">GitHub: <a href="https://github.com/${obj.getGithub()}">GitHub Profile</a></li>
 	</ul>
 	</div>
 	</div>
@@ -76,8 +76,8 @@ function genIntern(obj) {
 </div>
 <ul class="list-group list-group-flush">
 <li class="list-group-item">ID: <span>${obj.getId()}</span></li>
-<li class="list-group-item">Email: <span>${obj.getEmail()}</span></li>
-<li class="list-group-item">GitHub: <a href="https://github.com/${obj.getGithub}">GitHub Profile</a></li>
+<li class="list-group-item">Email: <a href="${obj.getEmail()}"></a></li>
+<li class="list-group-item">School: ${obj.getSchool()}</li>
 </ul>
 </div>
 </div>
