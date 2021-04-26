@@ -1,29 +1,3 @@
-//Initial manager questions
-
-//test
-
-//nope
-// const a = [
-// 	{
-// 		first: '1',
-// 		second: '2',
-// 		third: '3'
-// }
-// ]
-
-// export default {a};
-
-
-// module.exports = testA = [
-// 	{
-// 		first: '1',
-// 		second: '2',
-// 		third: '3'
-// }
-// ]
-
-
-
 const managerQuest = [
 	{
 		type: 'input',
@@ -33,8 +7,7 @@ const managerQuest = [
 			if (input) {
 				return true;
 			} else {
-				console.log("Please enter the managers to continue.");
-				return false;
+				return "Please enter the managers to continue.";
 			}
 		}
 	},
@@ -46,9 +19,9 @@ const managerQuest = [
 			if (input) {
 				return true;
 			} else {
-				console.log("Please enter the managers ID to continue.");
-				return false;
+				return "Please enter the managers ID to continue."
 			}
+			
 		}
 	},
 	{
@@ -141,5 +114,6 @@ const internQuest = [
 		message: 'What school does the Intern go to?'
 	}
 ]
+
 
 module.exports = {managerQuest, addEmpQuest, addEmpType, engineerQuest, internQuest};

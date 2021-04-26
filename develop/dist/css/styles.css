@@ -1,0 +1,22 @@
+.jumbotron {
+	background-color: tomato;
+}
+.headerJumbo {
+	font-weight: bolder;
+}
+
+.cardCont{
+	min-width: 300px;
+}
+
+.card-body {
+	background-color: aqua;
+}
+
+.row {
+	margin-bottom: 20px;
+}
+
+a {
+	font-size: small;
+}

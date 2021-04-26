@@ -22,17 +22,17 @@ function genManager(team) {
 	team.forEach( obj => {
 		if (obj.getRole() === 'Manager') {
 			managerData =`			
-			<div class="col-2">
+			<div class="col-2 cardCont">
 			<div class="card" >
 			<div class="card-body">
 			<h5 class="card-title">${obj.getName()}</h5>
-			<p class="card-text">${obj.getRole()}
+			<p class="card-text"><i class="bi bi-clipboard-check"></i>${obj.getRole()}
 			</p>
 			</div>
 			<ul class="list-group list-group-flush">
-			<li class="list-group-item">ID: <span>${obj.getId()}</span></li>
-			<li class="list-group-item">Email: <a href="${obj.getEmail()}">${obj.getEmail()}</a></li>
-			<li class="list-group-item">Office Number: ${obj.getOfficeNumber()} </li>
+			<li class="list-group-item">ID: ${obj.getId()}</li>
+			<li class="list-group-item">Email: <a href="mailto:${obj.getEmail()}">${obj.getEmail()}</a></li>
+			<li class="list-group-item">Office Number: ${obj.getOfficeNumber()}</li>
 			</ul>
 			</div>
 			</div>
@@ -47,17 +47,17 @@ function genManager(team) {
 function genEngineer(obj) {
 	// console.log(`made it to the gen eng ${obj.getName()}`);
 	return`			
-	<div class="col-2">
+	<div class="col-2 cardCont">
 	<div class="card" >
 	<div class="card-body">
 	<h5 class="card-title">${obj.getName()}</h5>
-	<p class="card-text">${obj.getRole()}
+	<p class="card-text"><i class="bi bi-lightbulb"></i>${obj.getRole()}
 	</p>
 	</div>
 	<ul class="list-group list-group-flush">
-	<li class="list-group-item">ID: <span>${obj.getId()}</span></li>
-	<li class="list-group-item">Email: <span>${obj.getEmail()}</span></li>
-	<li class="list-group-item">GitHub: <a href="https://github.com/${obj.getGithub()}">GitHub Profile</a></li>
+	<li class="list-group-item">ID: ${obj.getId()}</li>
+	<li class="list-group-item">Email: <a href="mailto:${obj.getEmail()}"></a></li>
+	<li class="list-group-item">GitHub: <a href="https://github.com/${obj.getGithub()}">${obj.getGithub()}</a></li>
 	</ul>
 	</div>
 	</div>
@@ -67,16 +67,16 @@ function genEngineer(obj) {
 function genIntern(obj) {
 	// console.log(`made it to the gen int ${obj.getName()}`);
 	return `			
-<div class="col-2">
+<div class="col-2 cardCont">
 <div class="card" >
 <div class="card-body">
 <h5 class="card-title">${obj.getName()}</h5>
-<p class="card-text">${obj.getRole()}
+<p class="card-text"><i class="bi bi-pencil-square"></i>${obj.getRole()}
 </p>
 </div>
 <ul class="list-group list-group-flush">
-<li class="list-group-item">ID: <span>${obj.getId()}</span></li>
-<li class="list-group-item">Email: <a href="${obj.getEmail()}"></a></li>
+<li class="list-group-item">ID: ${obj.getId()}</li>
+<li class="list-group-item">Email: <a href="mailto:${obj.getEmail()}"></a></li>
 <li class="list-group-item">School: ${obj.getSchool()}</li>
 </ul>
 </div>
@@ -104,44 +104,27 @@ crossorigin="anonymous"
 
 <link rel="stylesheet" href="./css/styles.css" />
 
-<title>Dummy</title>
+<title>Team</title>
 </head>
 <body>
 <header class='jumbotron'>
-<h1 class="display-4 text-center">My Team</h1>
+<h1 class="display-4 text-center headerJumbo">My Team</h1>
 </header>
 <div class="row justify-content-center">
-//-----BEG-----
+
 ${genManager(team)}
-//-----END-----
+
 </div>
 
 <div class="row justify-content-center">
-//-------BEG---------
+
 ${genEmployees(team)}
-//-----END----
+
 </div>
 
 </body>
 </html>
 `
 };
-
-
-//---------same thing
-
-// function genFile (team) {
-// 	team.forEach(obj => {
-// 		console.log(obj.getRole());
-// 	});
-// }
-
-// const genFile = (team) => {
-// 	team.forEach(obj => {
-// 		console.log(obj.getRole());
-// 	});
-// }
-
-//----------
 
 module.exports = genFile;
