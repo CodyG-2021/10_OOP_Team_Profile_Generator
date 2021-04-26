@@ -13,6 +13,11 @@
 	background-color: aqua;
 }
 
+.card{
+	margin-bottom: 20px;
+	box-shadow: 2px 4px 6px rgb(54, 54, 54);
+}
+
 .row {
 	margin-bottom: 20px;
 }

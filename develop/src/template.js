@@ -45,7 +45,6 @@ function genManager(team) {
 };
 
 function genEngineer(obj) {
-	// console.log(`made it to the gen eng ${obj.getName()}`);
 	return`			
 	<div class="col-2 cardCont">
 	<div class="card" >
@@ -56,7 +55,7 @@ function genEngineer(obj) {
 	</div>
 	<ul class="list-group list-group-flush">
 	<li class="list-group-item">ID: ${obj.getId()}</li>
-	<li class="list-group-item">Email: <a href="mailto:${obj.getEmail()}"></a></li>
+	<li class="list-group-item">Email: <a href="mailto:${obj.getEmail()}">${obj.getEmail()}</a></li>
 	<li class="list-group-item">GitHub: <a href="https://github.com/${obj.getGithub()}">${obj.getGithub()}</a></li>
 	</ul>
 	</div>
@@ -65,7 +64,6 @@ function genEngineer(obj) {
 };
 
 function genIntern(obj) {
-	// console.log(`made it to the gen int ${obj.getName()}`);
 	return `			
 <div class="col-2 cardCont">
 <div class="card" >
@@ -76,14 +74,13 @@ function genIntern(obj) {
 </div>
 <ul class="list-group list-group-flush">
 <li class="list-group-item">ID: ${obj.getId()}</li>
-<li class="list-group-item">Email: <a href="mailto:${obj.getEmail()}"></a></li>
+<li class="list-group-item">Email: <a href="mailto:${obj.getEmail()}">${obj.getEmail()}</a></li>
 <li class="list-group-item">School: ${obj.getSchool()}</li>
 </ul>
 </div>
 </div>
 `
 };
-
 
 function genFile(team) {
 	return `
